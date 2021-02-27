@@ -15,10 +15,14 @@ def products():
 @product.route('/service/')
 # @login_required
 def serviceList():
-    serdata = Service.query.all()
-    data = {}
-    for ser in serdata:
-        data[ser.id] = [ser.id, ser.service_name, ser.describe]
+    serData = Service.query.all()
+    data = []
+    for ser in serData:
+        serdict = {}
+        serdict['id'] = ser.id
+        serdict['service_name'] = ser.service_name
+        serdict['describe'] = ser.describe
+        data.append(serdict)
     return jsonify(data)
 
 
