@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div>这是服务页</div>
+    <div>
+        {% for service in services%}
+            <div>
+                <span>{{ service.id }}</span>&nbsp;
+                <span>{{ service.service_name }}</span>&nbsp;
+                <span>{{ service.describe }}</span>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

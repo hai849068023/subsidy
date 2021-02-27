@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div>这是服务编辑页</div>
+    <div>
+        <div style="line-height: 60px">服务名称： <input type="text" placeholder="请输入" value="{% if serviceData %}{{serviceData.service_name}}{% endif %}"></div>
+        <div style="line-height: 60px;">服务说明： <textarea type="text" placeholder="请输入">{% if serviceData %}{{serviceData.describe}}{% endif %}</textarea></div>
+        <div style="line-height: 60px;">服务介绍： <textarea type="text" placeholder="请输入">{% if serviceData %}{{serviceData.introduce}}{% endif %}</textarea></div>
+    </div>
+</body>
+</html>
