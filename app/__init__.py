@@ -15,8 +15,10 @@ login_manager = LoginManager(app)
 
 from app.subsidys.admin import admin
 from app.subsidys.product import product
+from app.subsidys.wx_index import wxIndex
 app.register_blueprint(admin)
 app.register_blueprint(product)
+app.register_blueprint(wxIndex, url_prefix='/wx')
 
 
 @login_manager.user_loader
