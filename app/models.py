@@ -3,14 +3,12 @@ from flask_login import UserMixin
 from werkzeug.security import generate_password_hash, check_password_hash
 
 
+# 用户表
 class Users(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
-    real_name = db.Column(db.String(28))
-    nick_name = db.Column(db.String(28))
     tel = db.Column(db.String(11))
     head_img = db.Column(db.String(128))
     password = db.Column(db.String(128))
-    is_admin = db.Column(db.String(5))
 
     def set_password(self, password):
         self.password = generate_password_hash(password)
@@ -75,6 +73,12 @@ class Customs(db.Model):
     consumption = db.Column(db.Float(), comment='累计消费')
     growth_value = db.Column(db.Integer, comment='成长值')
     add_time = db.Column(db.String(50), comment='注册时间')
+
+
+# 客户的汽车记录表
+class Customs_cars(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+
 
 
 # 会员卡表
