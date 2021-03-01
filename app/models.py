@@ -68,6 +68,7 @@ class Stores(db.Model):
 class Customs(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     nickname = db.Column(db.String(50), comment='昵称')
+    openid = db.Column(db.String(255))
     tel = db.Column(db.String(11), comment='手机号')
     head_img = db.Column(db.String(255), comment='头像')
     consumption = db.Column(db.Float(), comment='累计消费')
@@ -78,7 +79,15 @@ class Customs(db.Model):
 # 客户的汽车记录表
 class Customs_cars(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-
+    openid = db.Column(db.String(255))
+    brand_img = db.Column(db.String(255))
+    brand = db.Column(db.String(50))
+    car = db.Column(db.String(50))
+    model = db.Column(db.String(50))
+    car_number = db.Column(db.String(50))
+    last_time = db.Column(db.String(50), comment='上次保养时间')
+    reg_time = db.Column(db.String(50), comment='上牌时间')
+    is_used = db.Column(db.Integer, comment='常用车 1常用 0不常用')
 
 
 # 会员卡表
